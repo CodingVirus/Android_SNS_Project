@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SNS_App</string>
+    <string name="test">테스트</string>
+    <string name="hi">안녕!</string>
+</resources>

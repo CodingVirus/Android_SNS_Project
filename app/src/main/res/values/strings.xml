@@ -2,4 +2,20 @@
     <string name="app_name">SNS_App</string>
     <string name="test">" hello! "</string>
     <string name="hi"> Hi!! </string>
+    <string name="register">register</string>
+    <string name="login">login</string>
+    <string name="password">password</string>
+    <string name="email">email</string>
+    <string name="lang_info">english</string>
+    <string name="forgot_password">Forgot password?</string>
+    <string name="create_account">Create new account</string>
+    <string name="already">Already have an account?</string>
+    <string name="register_text">Input email and password</string>
+    <string name="name">name</string>
+    <string name="email_check">Please check if the email is correct</string>
+    <string name="password_check">Please check if the password is correct</string>
+    <string name="login_success">Login Success</string>
+    <string name="login_failure">Login Failure</string>
+    <string name="not_input_text">There is information that has not been entered</string>
+    <string name="register_success">Register Success</string>
 </resources>

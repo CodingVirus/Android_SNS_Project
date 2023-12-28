@@ -49,7 +49,7 @@ class SignInActivity : AppCompatActivity() {
             val pw : String = inputPw.text.toString()
 
 
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, HomeActivity::class.java)
 //            intent.putExtra("email", email)
 //            intent.putExtra("password", pw)
 //
@@ -68,7 +68,7 @@ class SignInActivity : AppCompatActivity() {
                         intent.putExtra("password", pw)
                         intent.putExtra("name", name)
                         setResult(Activity.RESULT_OK, intent)
-                        startActivity(intent)
+                        finish()
                     } else {
                         Toast.makeText(this, R.string.login_failure, Toast.LENGTH_SHORT).show()
                     }

@@ -134,6 +134,40 @@ class DBHelper(
         return db.update(TABLE_NAME, values, "$COL_EMAIL=?", arrayOf(user.email))
     }
 
+//    fun select(db: SQLiteDatabase, txt:String) : String?{
+//        var sql = " SELECT * FROM MYTABLE " +
+//                "   WHERE TXT='${txt}' "
+//        var result = db.rawQuery(sql, null)
+//
+//        var str:String? = ""
+//        while (result.moveToNext()){
+//            str += "번호 :" +result.getString(result.getColumnIndex("SEQ")) + "\n" +
+//                    "데이터 :" + result.getString(result.getColumnIndex("TXT"))
+//        }
+//
+//        return str
+//    }
+
+    fun select(user: User) : Boolean{
+        val db = this.readableDatabase
+
+        val projection = arrayOf(UID)
+
+        val selection = "$COL_EMAIL = ? AND $COL_PW = ?"
+        val selectionArgs = arrayOf(user.email, user.pw)
+
+        val cursor = db.query(
+            TABLE_NAME,
+            projection,
+            selection,
+            selectionArgs,
+            null,
+            null,
+            null
+        )
+        return cursor.count > 0
+    }
+
     // 유저 삭제 메소드
     fun deleteUser(user: User){
         val db = this.writableDatabase

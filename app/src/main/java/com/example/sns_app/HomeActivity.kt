@@ -28,10 +28,10 @@ class HomeActivity : AppCompatActivity() {
         }
 
         addButton.setOnClickListener {
-            //val intent = Intent(this, MyPageActivity::class.java)
-            //startActivity(intent)
+            val intent = Intent(this, AddPostActivity::class.java)
+            startActivity(intent)
 
-            postLayout.addView(createPost())
+            //postLayout.addView(createPost())
         }
     }
 

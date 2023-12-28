@@ -3,4 +3,6 @@
     <string name="app_name">SNS_App</string>
     <string name="test">테스트</string>
     <string name="hi">안녕!</string>
+    <string name="Input_post">" 문구 입력... "</string>
+    <string name="New_Post">새 게시물</string>
 </resources>

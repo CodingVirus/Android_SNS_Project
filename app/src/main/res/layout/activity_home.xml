@@ -27,8 +27,7 @@
             <ImageButton
                 android:id="@+id/imageButton4"
                 android:layout_width="135dp"
-                android:layout_height="match_parent"
-                app:srcCompat="@drawable/instagram_pont_icon" />
+                android:layout_height="match_parent"/>
         </LinearLayout>
 
         <ScrollView
@@ -59,28 +58,23 @@
             android:orientation="horizontal">
             <ImageButton
                 android:id="@+id/btn_home"
-                style="@style/BottomIconStyle"
-                app:srcCompat="@drawable/instagram_pont_icon" />
+                style="@style/BottomIconStyle"/>
 
             <ImageButton
                 android:id="@+id/btn_community"
-                style="@style/BottomIconStyle"
-                app:srcCompat="@drawable/instagram_pont_icon" />
+                style="@style/BottomIconStyle"/>
 
             <ImageButton
                 android:id="@+id/btn_add"
-                style="@style/BottomIconStyle"
-                app:srcCompat="@drawable/instagram_pont_icon" />
+                style="@style/BottomIconStyle"/>
 
             <ImageButton
                 android:id="@+id/btn_alarm"
-                style="@style/BottomIconStyle"
-                app:srcCompat="@drawable/instagram_pont_icon" />
+                style="@style/BottomIconStyle"/>
 
             <ImageButton
                 android:id="@+id/btn_my_page"
-                style="@style/BottomIconStyle"
-                app:srcCompat="@drawable/instagram_pont_icon" />
+                style="@style/BottomIconStyle"/>
         </LinearLayout>
 
     </LinearLayout>

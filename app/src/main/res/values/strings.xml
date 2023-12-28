@@ -2,4 +2,6 @@
     <string name="app_name">SNS_App</string>
     <string name="test">" hello! "</string>
     <string name="hi"> Hi!! </string>
+    <string name="Input_post">Input Post...</string>
+    <string name="New_Post">New Post</string>
 </resources>

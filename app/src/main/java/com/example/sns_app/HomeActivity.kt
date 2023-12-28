@@ -15,7 +15,6 @@ class HomeActivity : AppCompatActivity() {
     private val homeButton: ImageButton by lazy {findViewById(R.id.btn_home)}
     private val myPageButton: ImageButton by lazy {findViewById(R.id.btn_my_page)}
     private val addButton: ImageButton by lazy {findViewById(R.id.btn_add)}
-
     private val postLayout: LinearLayout by lazy { findViewById(R.id.main_post) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,16 +30,9 @@ class HomeActivity : AppCompatActivity() {
             val intent = Intent(this, AddPostActivity::class.java)
             startActivity(intent)
 
-            //postLayout.addView(createPost())
         }
+
     }
 
-    private fun createPost() : View {
-        val post = Button(this)
-        val lp = LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 300)
 
-        post.layoutParams = lp
-
-        return post
-    }
 }

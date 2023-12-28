@@ -6,31 +6,37 @@
     android:layout_height="match_parent"
     tools:context=".HomeActivity">
 
-<<<<<<< HEAD
+
     <TextView
         android:id="@+id/tv_email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="email"
-        tools:layout_editor_absoluteX="76dp"
-        tools:layout_editor_absoluteY="47dp" />
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/tv_name"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/tv_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="name"
-        tools:layout_editor_absoluteX="76dp"
-        tools:layout_editor_absoluteY="76dp" />
+        android:visibility="invisible"
+
+        app:layout_constraintBottom_toTopOf="@+id/tv_password"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/tv_password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="100dp"
+
         android:text="password"
-        tools:layout_editor_absoluteX="74dp"
-        tools:layout_editor_absoluteY="103dp" />
-=======
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -104,5 +110,4 @@
 
     </LinearLayout>
 
->>>>>>> 604ebc9c2d404379c11a65726cf0175858f86eea
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -2,7 +2,6 @@
     <string name="app_name">SNS_App</string>
     <string name="test">" hello! "</string>
     <string name="hi"> Hi!! </string>
-<<<<<<< HEAD
     <string name="register">register</string>
     <string name="login">login</string>
     <string name="password">password</string>
@@ -19,8 +18,7 @@
     <string name="login_failure">Login Failure</string>
     <string name="not_input_text">There is information that has not been entered</string>
     <string name="register_success">Register Success</string>
-=======
     <string name="Input_post">Input Post...</string>
     <string name="New_Post">New Post</string>
->>>>>>> 604ebc9c2d404379c11a65726cf0175858f86eea
+
 </resources>

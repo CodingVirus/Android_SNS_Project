@@ -1,41 +1,32 @@
 package com.example.sns_app
 
-<<<<<<< HEAD
 import android.app.Activity
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.EditText
 import android.widget.TextView
-import android.widget.Toast
-
-class HomeActivity : AppCompatActivity() {
-
-    lateinit var db: DBHelper
-    var users = ArrayList<User>()
-=======
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
-import android.view.View
-import android.view.ViewGroup
-import android.widget.Button
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.LinearLayout
 
 class HomeActivity : AppCompatActivity() {
 
+    lateinit var db: DBHelper
+    var users = ArrayList<User>()
+
+
     private val homeButton: ImageButton by lazy {findViewById(R.id.btn_home)}
     private val myPageButton: ImageButton by lazy {findViewById(R.id.btn_my_page)}
     private val addButton: ImageButton by lazy {findViewById(R.id.btn_add)}
     private val postLayout: LinearLayout by lazy { findViewById(R.id.main_post) }
->>>>>>> 604ebc9c2d404379c11a65726cf0175858f86eea
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
-<<<<<<< HEAD
+
         db = DBHelper(this)
 
         val intent = intent
@@ -46,16 +37,27 @@ class HomeActivity : AppCompatActivity() {
         val email = intent.getStringExtra("email").toString()
         val name = intent.getStringExtra("name").toString()
         val password = intent.getStringExtra("password").toString()
-        val users = intent.getSerializableExtra("users") as ArrayList<User>
+//        val users = intent.getSerializableExtra("users") as ArrayList<User>
+//
+//        createUser().let {
+//            if (it != null) {
+//                if (db.select(it)) {
+//                    tv_Email.setText(email)
+//                    tv_Name.setText(name)
+//                    tv_password.setText(password)
+//                }
+//            }
+//        }
 
-        createUser().let {
-            if (it != null) {
-                if (db.select(it)) {
-                    tv_Email.setText(email)
-                    tv_Name.setText(name)
-                    tv_password.setText(password)
-                }
-            }
+        myPageButton.setOnClickListener {
+            val intent = Intent(this, MyPageActivity::class.java)
+            startActivity(intent)
+        }
+
+        addButton.setOnClickListener {
+            val intent = Intent(this, AddPostActivity::class.java)
+            startActivity(intent)
+
         }
 
 //        tv_loginResult.text = "안녕하세요 ${name}님"
@@ -74,19 +76,10 @@ class HomeActivity : AppCompatActivity() {
             name = "a"
         }
         return User(email,pw,name)
-=======
-        myPageButton.setOnClickListener {
-            val intent = Intent(this, MyPageActivity::class.java)
-            startActivity(intent)
-        }
 
-        addButton.setOnClickListener {
-            val intent = Intent(this, AddPostActivity::class.java)
-            startActivity(intent)
 
-        }
 
->>>>>>> 604ebc9c2d404379c11a65726cf0175858f86eea
+
     }
 
 

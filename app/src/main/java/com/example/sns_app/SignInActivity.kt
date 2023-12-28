@@ -68,7 +68,7 @@ class SignInActivity : AppCompatActivity() {
                         intent.putExtra("password", pw)
                         intent.putExtra("name", name)
                         setResult(Activity.RESULT_OK, intent)
-                        finish()
+                        startActivity(intent)
                     } else {
                         Toast.makeText(this, R.string.login_failure, Toast.LENGTH_SHORT).show()
                     }

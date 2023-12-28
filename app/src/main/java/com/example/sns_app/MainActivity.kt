@@ -15,5 +15,3 @@ class MainActivity : AppCompatActivity() {
 
     }
 }
-
-//sdsdf

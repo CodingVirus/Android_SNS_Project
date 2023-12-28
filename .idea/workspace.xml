@@ -2,9 +2,18 @@
 <project version="4">
   <component name="AndroidLayouts">
     <shared>
-      <config />
+      <config>
+        <device id="pixel" />
+        <device id="Nexus 7" />
+        <device id="pixel_7_pro" />
+      </config>
     </shared>
     <layouts>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_add_post.xml">
+        <config>
+          <theme>@style/Theme.SNS_App</theme>
+        </config>
+      </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_home.xml">
         <config>
           <theme>@style/Theme.SNS_App</theme>
@@ -43,12 +52,17 @@
   <component name="ChangeListManager">
     <list default="true" id="803f9745-e095-4ba6-b430-f017a2ccbcc3" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/sns_app/DBHelper.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/sns_app/DBHelper.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/sns_app/HomeActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/sns_app/HomeActivity.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/sns_app/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/sns_app/MainActivity.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/sns_app/SignInActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/sns_app/SignInActivity.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/sns_app/UserAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/sns_app/UserAdapter.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_home.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_home.xml" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/sns_app/AddPostActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/sns_app/AddPostActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/sns_app/HomeActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/sns_app/HomeActivity.kt" afterDir="false" />
+>>>>>>> 604ebc9c2d404379c11a65726cf0175858f86eea
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,6 +138,7 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+<<<<<<< HEAD
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
@@ -133,14 +148,35 @@
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
     "last_opened_file_path": "D:/AndroidStudio/Projects/LoginPage"
+=======
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;Z:/AndroidProjects/SignUpPage&quot;
+>>>>>>> 604ebc9c2d404379c11a65726cf0175858f86eea
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="android.template.-1274458889">
+      <recent name="com.example.sns_app" />
+    </key>
     <key name="android.template.2033594822">
       <recent name="com.example.sns_app" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+<<<<<<< HEAD
       <recent name="D:\AndroidStudio\Projects\Android_SNS_Project\app\src\main\res\drawable" />
+=======
+      <recent name="Z:\Git-Clone\Android_SNS_Project\app\src\main\res\drawable" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="Z:\Git-Clone\Android_SNS_Project\app\src\main\res\drawable" />
+>>>>>>> 604ebc9c2d404379c11a65726cf0175858f86eea
     </key>
     <key name="android.template.1608024909">
       <recent name="com.example.sns_app" />

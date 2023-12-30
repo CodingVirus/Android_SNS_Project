@@ -52,14 +52,15 @@
             android:layout_weight="13"
             android:orientation="horizontal">
 
-            <ImageButton
+            <ImageView
                 android:id="@+id/btn_add_image"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_marginRight="15dp">
-            </ImageButton>
+            </ImageView>
 
             <EditText
+                android:id="@+id/et_comment"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:hint="@string/Input_post"

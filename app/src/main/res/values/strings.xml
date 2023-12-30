@@ -20,5 +20,9 @@
     <string name="register_success">Register Success</string>
     <string name="Input_post">Input Post...</string>
     <string name="New_Post">New Post</string>
+    <string name="Uploading_image">Uploading Image...</string>
+    <string name="Processing">Processing...</string>
+    <string name="Upload_success">Uploaded Successfully</string>
+    <string name="Upload_fail">Upload Failed...</string>
 
 </resources>

@@ -6,25 +6,44 @@ import android.os.Bundle
 import android.widget.EditText
 import android.widget.TextView
 import android.content.Intent
+import android.media.Image
+import android.net.Uri
+import android.view.View
+import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.LinearLayout
+import androidx.core.view.marginBottom
+import androidx.core.view.setMargins
+import androidx.lifecycle.ViewModelProvider.NewInstanceFactory.Companion.instance
 
 class HomeActivity : AppCompatActivity() {
+    init {
+        instance = this
+    }
+
+    companion object {
+        private var instance: HomeActivity? = null
+
+        fun getInstance(): HomeActivity? 		{
+            return instance
+        }
+    }
 
     lateinit var db: DBHelper
     var users = ArrayList<User>()
 
-
-    private val homeButton: ImageButton by lazy {findViewById(R.id.btn_home)}
-    private val myPageButton: ImageButton by lazy {findViewById(R.id.btn_my_page)}
-    private val addButton: ImageButton by lazy {findViewById(R.id.btn_add)}
+    private val homeButton: ImageView by lazy {findViewById(R.id.btn_home)}
+    private val myPageButton: ImageView by lazy {findViewById(R.id.btn_my_page)}
+    private val addButton: ImageView by lazy {findViewById(R.id.btn_add)}
     private val postLayout: LinearLayout by lazy { findViewById(R.id.main_post) }
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
+
 
 
         db = DBHelper(this)
@@ -61,6 +80,27 @@ class HomeActivity : AppCompatActivity() {
         }
 
 //        tv_loginResult.text = "안녕하세요 ${name}님"
+    }
+    fun createPost(img: Uri?, com: String)  {
+        val imagePost = ImageView(this)
+        val comment = TextView(this)
+
+        val lp = LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
+        val lp2 = LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
+        lp2.setMargins(0, 0, 0, 80)
+
+        imagePost.layoutParams = lp
+        imagePost.setImageURI(img)
+
+
+        comment.layoutParams = lp2
+        comment.textSize = 40f
+        comment.text = com
+
+
+
+        postLayout.addView(comment, 0)
+        postLayout.addView(imagePost, 0)
     }
 
     private fun createUser(): User?{

@@ -20,5 +20,6 @@
     <string name="register_success">Register Success</string>
     <string name="Input_post">Input Post...</string>
     <string name="New_Post">New Post</string>
+    <string name="My_profile">My Profile</string>
 
 </resources>

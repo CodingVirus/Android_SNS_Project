@@ -6,4 +6,191 @@
     android:layout_height="match_parent"
     tools:context=".MyPageActivity">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="4"
+            android:src="@drawable/instagram_logo"></ImageView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:text="@string/My_profile"
+            android:textSize="20dp"
+            android:textStyle="bold"></TextView>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="4"
+            android:src="@drawable/instagram_logo"></ImageView>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="4"
+            android:src="@drawable/instagram_logo"></ImageView>
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="50dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="120dp">
+
+                <LinearLayout
+                    android:id="@+id/my_profile"
+                    android:layout_width="100dp"
+                    android:layout_height="120dp"
+                    android:orientation="vertical">
+                    <ImageView
+                        android:id="@+id/img_profile"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/instagram_logo">
+                    </ImageView>
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="20dp"
+
+                        android:gravity="center"
+                        android:text="33">
+                    </TextView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/tv_post_num"
+                    android:layout_width="100dp"
+                    android:layout_height="120dp"
+                    android:layout_toRightOf="@id/my_profile"
+                    android:gravity="center"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="20dp"
+                        android:gravity="center"
+                        android:text="33"
+                        android:src="@drawable/instagram_logo">
+                    </TextView>
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="20dp"
+                        android:gravity="center"
+                        android:text="팔로잉">
+                    </TextView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/tv_follower"
+                    android:layout_width="100dp"
+                    android:layout_height="120dp"
+                    android:layout_toRightOf="@id/tv_post_num"
+                    android:gravity="center"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="20dp"
+                        android:gravity="center"
+                        android:text="33"
+                        android:src="@drawable/instagram_logo">
+                    </TextView>
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="20dp"
+                        android:gravity="center"
+                        android:text="팔로잉">
+                    </TextView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/tv_following"
+                    android:layout_width="100dp"
+                    android:layout_height="120dp"
+                    android:layout_toRightOf="@id/tv_follower"
+                    android:gravity="center"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="20dp"
+                        android:gravity="center"
+                        android:text="33"
+                        android:src="@drawable/instagram_logo">
+                    </TextView>
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="20dp"
+                        android:gravity="center"
+                        android:text="팔로잉">
+                    </TextView>
+                </LinearLayout>
+            </RelativeLayout>
+
+            <Button
+                android:id="@+id/btn_edit_profile"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:background="#734ABC"
+                android:text="test">
+            </Button>
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tab_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="20dp">
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:icon="@drawable/instagram_pont_icon">
+                </com.google.android.material.tabs.TabItem>
+
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:icon="@drawable/instagram_pont_icon">
+                </com.google.android.material.tabs.TabItem>
+            </com.google.android.material.tabs.TabLayout>
+
+            <GridLayout
+                android:id="@+id/grid_my_post"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:columnCount="3">
+                <ImageView
+                    android:layout_width="140dp"
+                    android:layout_height="130dp"
+                    android:background="@color/black"
+                    android:src="@drawable/instagram_logo">
+                </ImageView>
+                <ImageView
+                    android:layout_width="140dp"
+                    android:layout_height="130dp"
+                    android:src="@drawable/instagram_logo">
+                </ImageView>
+
+
+            </GridLayout>
+        </LinearLayout>
+    </ScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

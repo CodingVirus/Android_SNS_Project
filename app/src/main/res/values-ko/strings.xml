@@ -21,5 +21,5 @@
     <string name="register_success">회원가입 성공</string>
     <string name="Input_post">" 문구 입력... "</string>
     <string name="New_Post">새 게시물</string>
-
+    <string name="My_profile">내 프로필</string>
 </resources>

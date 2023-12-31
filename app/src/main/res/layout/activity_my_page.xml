@@ -14,28 +14,33 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="4"
-            android:src="@drawable/instagram_logo"></ImageView>
+            android:src="@drawable/instagram_logo">
+        </ImageView>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="2"
-            android:gravity="center"
+            android:gravity="start|center"
             android:text="@string/My_profile"
             android:textSize="20dp"
-            android:textStyle="bold"></TextView>
+            android:textStyle="bold"
+            android:textColor="@color/black">
+        </TextView>
 
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="4"
-            android:src="@drawable/instagram_logo"></ImageView>
+            android:src="@drawable/instagram_logo">
+        </ImageView>
 
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="4"
-            android:src="@drawable/instagram_logo"></ImageView>
+            android:src="@drawable/instagram_logo">
+        </ImageView>
     </LinearLayout>
 
     <ScrollView
@@ -66,9 +71,9 @@
                     <TextView
                         android:layout_width="100dp"
                         android:layout_height="20dp"
-
                         android:gravity="center"
-                        android:text="33">
+                        android:text="name"
+                        android:textStyle="bold">
                     </TextView>
                 </LinearLayout>
 
@@ -84,13 +89,15 @@
                         android:layout_height="20dp"
                         android:gravity="center"
                         android:text="33"
+                        android:textStyle="bold"
                         android:src="@drawable/instagram_logo">
                     </TextView>
                     <TextView
                         android:layout_width="100dp"
                         android:layout_height="20dp"
                         android:gravity="center"
-                        android:text="팔로잉">
+                        android:textStyle="bold"
+                        android:text="@string/My_post_num">
                     </TextView>
                 </LinearLayout>
 
@@ -106,13 +113,15 @@
                         android:layout_height="20dp"
                         android:gravity="center"
                         android:text="33"
+                        android:textStyle="bold"
                         android:src="@drawable/instagram_logo">
                     </TextView>
                     <TextView
                         android:layout_width="100dp"
                         android:layout_height="20dp"
                         android:gravity="center"
-                        android:text="팔로잉">
+                        android:textStyle="bold"
+                        android:text="@string/My_followers">
                     </TextView>
                 </LinearLayout>
 
@@ -128,13 +137,15 @@
                         android:layout_height="20dp"
                         android:gravity="center"
                         android:text="33"
+                        android:textStyle="bold"
                         android:src="@drawable/instagram_logo">
                     </TextView>
                     <TextView
                         android:layout_width="100dp"
                         android:layout_height="20dp"
                         android:gravity="center"
-                        android:text="팔로잉">
+                        android:textStyle="bold"
+                        android:text="@string/My_following">
                     </TextView>
                 </LinearLayout>
             </RelativeLayout>
@@ -147,16 +158,18 @@
                 android:layout_marginRight="10dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="20dp"
+                android:textSize="17dp"
                 android:gravity="center"
-                android:background="#734ABC"
-                android:text="test">
+                android:background="#85818A"
+                android:text="@string/Edit_profile">
             </Button>
 
             <com.google.android.material.tabs.TabLayout
                 android:id="@+id/tab_layout"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="20dp">
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="2dp">
                 <com.google.android.material.tabs.TabItem
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -177,14 +190,21 @@
                 android:orientation="horizontal"
                 android:columnCount="3">
                 <ImageView
-                    android:layout_width="140dp"
+                    android:layout_width="135dp"
                     android:layout_height="130dp"
                     android:background="@color/black"
                     android:src="@drawable/instagram_logo">
                 </ImageView>
                 <ImageView
-                    android:layout_width="140dp"
+                    android:layout_width="135dp"
                     android:layout_height="130dp"
+                    android:src="@drawable/instagram_logo">
+                </ImageView>
+
+                <ImageView
+                    android:layout_width="135dp"
+                    android:layout_height="130dp"
+                    android:background="@color/black"
                     android:src="@drawable/instagram_logo">
                 </ImageView>
 

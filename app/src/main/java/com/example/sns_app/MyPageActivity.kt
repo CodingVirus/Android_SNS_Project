@@ -3,6 +3,7 @@ package com.example.sns_app
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.Button
 import android.widget.GridLayout
 import com.google.android.material.tabs.TabLayout
 
@@ -10,6 +11,7 @@ class MyPageActivity : AppCompatActivity() {
 
     private val tabLayout: TabLayout by lazy { findViewById(R.id.tab_layout) }
     private val postGridLayout: GridLayout by lazy { findViewById(R.id.grid_my_post) }
+    private val editProfileButton: Button by lazy { findViewById(R.id.btn_edit_profile) }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_my_page)
@@ -36,6 +38,11 @@ class MyPageActivity : AppCompatActivity() {
 
             }
         })
+
+        // 프로필 편집 버튼을 눌렀을 경우
+        editProfileButton.setOnClickListener {
+
+        }
 
     }
 }

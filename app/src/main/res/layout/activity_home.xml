@@ -52,13 +52,8 @@
                 android:layout_width="150dp"
                 android:layout_marginRight="100dp"
                 android:layout_height="match_parent"
-                android:src="@drawable/instagram_pont_icon" />
+                android:src="@drawable/instapont_logo" />
 
-            <ImageView
-                android:id="@+id/imageButton4"
-                android:layout_width="50dp"
-                android:layout_height="match_parent"
-                android:src="@drawable/home_button"/>
         </LinearLayout>
 
         <androidx.recyclerview.widget.RecyclerView
@@ -82,22 +77,22 @@
 
             <ImageView
                 android:id="@+id/btn_search"
-                android:src="@drawable/home_button"
+                android:src="@drawable/icon_5th"
                 style="@style/BottomIconStyle"/>
 
             <ImageView
                 android:id="@+id/btn_add"
-                android:src="@drawable/home_button"
-                style="@style/BottomIconStyle"/>
+                android:src="@drawable/icon_3rd"
+                style="@style/BottomIconStyle" />
 
             <ImageView
                 android:id="@+id/btn_alarm"
-                android:src="@drawable/home_button"
+                android:src="@drawable/icon_4th"
                 style="@style/BottomIconStyle"/>
 
             <ImageView
                 android:id="@+id/btn_my_page"
-                android:src="@drawable/home_button"
+                android:background="#4C4747"
                 style="@style/BottomIconStyle"/>
         </LinearLayout>
 

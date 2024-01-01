@@ -15,7 +15,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="4"
-            android:src="@drawable/instagram_logo">
+            android:src="@drawable/back">
         </ImageView>
 
         <TextView
@@ -33,14 +33,14 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="4"
-            android:src="@drawable/instagram_logo">
+            android:background="#5C5757">
         </ImageView>
 
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="4"
-            android:src="@drawable/instagram_logo">
+            android:background="@color/black">
         </ImageView>
     </LinearLayout>
 
@@ -67,7 +67,7 @@
                         android:id="@+id/img_profile"
                         android:layout_width="100dp"
                         android:layout_height="100dp"
-                        android:src="@drawable/instagram_logo">
+                        android:background="#504A4A">
                     </ImageView>
                     <TextView
                         android:id="@+id/tv_name"

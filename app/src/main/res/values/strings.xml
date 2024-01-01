@@ -20,6 +20,10 @@
     <string name="register_success">Register Success</string>
     <string name="Input_post">Input Post...</string>
     <string name="New_Post">New Post</string>
+    <string name="Processing">Processing...</string>
+    <string name="Upload_success">Uploaded Successfully</string>
+    <string name="Upload_fail">Upload Failed...</string>
+    <string name="Uploading_post">Uploading Post...</string>
     <string name="password_validate">password validate</string>
     <string name="find_password">Find Password</string>
     <string name="enter_email">Please enter your registered email</string>

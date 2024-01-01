@@ -44,7 +44,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="100dp"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_weight="1">
 
             <ImageView
                 android:id="@+id/imageView"
@@ -53,56 +54,50 @@
                 android:layout_height="match_parent"
                 android:src="@drawable/instagram_pont_icon" />
 
-            <ImageButton
+            <ImageView
                 android:id="@+id/imageButton4"
-                android:layout_width="135dp"
-                android:layout_height="match_parent"/>
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/home_button"/>
         </LinearLayout>
 
-        <ScrollView
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_post_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1">
+            android:layout_weight="7">
 
-            <LinearLayout
-                android:id="@+id/main_post"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
 
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginBottom="20dp"
-                    android:src="@drawable/instagram_pont_icon"/>
-
-            </LinearLayout>
-
-        </ScrollView>
+        </androidx.recyclerview.widget.RecyclerView>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="100dp"
-            android:orientation="horizontal">
-            <ImageButton
+            android:orientation="horizontal"
+            android:layout_weight="1">
+            <ImageView
                 android:id="@+id/btn_home"
+                android:src="@drawable/home_button"
                 style="@style/BottomIconStyle"/>
 
-            <ImageButton
+            <ImageView
                 android:id="@+id/btn_community"
+                android:src="@drawable/home_button"
                 style="@style/BottomIconStyle"/>
 
-            <ImageButton
+            <ImageView
                 android:id="@+id/btn_add"
+                android:src="@drawable/home_button"
                 style="@style/BottomIconStyle"/>
 
-            <ImageButton
+            <ImageView
                 android:id="@+id/btn_alarm"
+                android:src="@drawable/home_button"
                 style="@style/BottomIconStyle"/>
 
-            <ImageButton
+            <ImageView
                 android:id="@+id/btn_my_page"
+                android:src="@drawable/home_button"
                 style="@style/BottomIconStyle"/>
         </LinearLayout>
 

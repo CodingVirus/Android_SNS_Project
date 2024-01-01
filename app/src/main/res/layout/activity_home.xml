@@ -90,10 +90,10 @@
                 android:src="@drawable/icon_4th"
                 style="@style/BottomIconStyle"/>
 
-            <ImageView
+            <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/btn_my_page"
-                android:background="#4C4747"
-                style="@style/BottomIconStyle"/>
+                style="@style/BottomIconStyle"
+                android:src="@drawable/profile_image"/>
         </LinearLayout>
 
     </LinearLayout>

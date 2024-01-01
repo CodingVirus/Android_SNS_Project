@@ -111,6 +111,7 @@ class HomeActivity : AppCompatActivity() {
         myPageButton.setOnClickListener {
             val intent = Intent(this, MyPageActivity::class.java)
             startActivity(intent)
+            overridePendingTransition(R.anim.slide_left_enter, R.anim.slide_left_exit)
         }
 
         addButton.setOnClickListener {
@@ -122,6 +123,7 @@ class HomeActivity : AppCompatActivity() {
         searchButton.setOnClickListener {
             val intent = Intent(this, SearchPageActivity::class.java)
             startActivity(intent)
+            overridePendingTransition(R.anim.slide_left_enter, R.anim.slide_left_exit)
         }
 //        tv_loginResult.text = "안녕하세요 ${name}님"
     }

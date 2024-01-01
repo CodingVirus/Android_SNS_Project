@@ -1,6 +1,7 @@
 package com.example.sns_app
 
 import android.app.Activity
+import android.content.ContentValues.TAG
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -11,27 +12,32 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 
 class SignInActivity : AppCompatActivity() {
 
-    lateinit var db: DBHelper
-    var users = ArrayList<User>()
     lateinit var resultLauncher: ActivityResultLauncher<Intent>
     lateinit var inputEmail: EditText
     lateinit var inputPw: EditText
     lateinit var inputName: EditText
+    private lateinit var auth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_in)
-        db = DBHelper(this)
+
+        // Initialize Firebase Auth
+        auth = Firebase.auth
 
         val inputEmail = findViewById<EditText>(R.id.et_inputEmail)
         val inputPw = findViewById<EditText>(R.id.et_inputPw)
         val inputName = findViewById<TextView>(R.id.tv_inputName)
         val loginButton = findViewById<Button>(R.id.btn_login)
         val regiButton = findViewById<TextView>(R.id.tv_createAccount)
-        val findEmail = findViewById<TextView>(R.id.tv_forgotPassword)
+        val forgotPw = findViewById<TextView>(R.id.tv_forgotPassword)
 
         loginButton.setOnClickListener {
 
@@ -46,41 +52,26 @@ class SignInActivity : AppCompatActivity() {
             }
 
             val email : String = inputEmail.text.toString()
-            val pw : String = inputPw.text.toString()
-
+            val password : String = inputPw.text.toString()
 
             val intent = Intent(this, HomeActivity::class.java)
+
+            signIn(email, password)
 //            intent.putExtra("email", email)
-//            intent.putExtra("password", pw)
-//
-//            Log.d("Login email : ", email)
-//            Log.d("pw : ", pw)
-//            Toast.makeText(this, R.string.login_success, Toast.LENGTH_SHORT).show()
+//            intent.putExtra("password", password)
+//            setResult(Activity.RESULT_OK, intent)
+//            startActivity(intent)
 
-            createUser().let {
-                if (it != null) {
-                    if (db.login(it)) {
-                        Toast.makeText(this, R.string.login_success, Toast.LENGTH_SHORT).show()
-//                        val intent = Intent(this, MainActivity::class.java)
-                        val name : String = inputName.text.toString()
-
-                        intent.putExtra("email", email)
-                        intent.putExtra("password", pw)
-                        intent.putExtra("name", name)
-                        setResult(Activity.RESULT_OK, intent)
-                        startActivity(intent)
-                    } else {
-                        Toast.makeText(this, R.string.login_failure, Toast.LENGTH_SHORT).show()
-                    }
-                }else{
-                    Toast.makeText(this, "정보를 모두 입력해주세요", Toast.LENGTH_SHORT).show()
-                }
-            }
         }
 
         regiButton.setOnClickListener {
             val intent = Intent(this, SignUpActivity::class.java)
             resultLauncher.launch(intent)
+        }
+
+        forgotPw.setOnClickListener {
+            val intent = Intent(this, FindActivity::class.java)
+            startActivity(intent)
         }
 
         resultLauncher =
@@ -97,18 +88,36 @@ class SignInActivity : AppCompatActivity() {
             }
     }
 
-    private fun createUser(): User?{
-        val inputEmail = findViewById<EditText>(R.id.et_inputEmail)
-        val inputPw = findViewById<EditText>(R.id.et_inputPw)
-        val inputName = findViewById<TextView>(R.id.tv_inputName)
-        val email = inputEmail.text.toString()
-        val pw = inputPw.text.toString()
-        var name = inputName.text.toString()
-        if(email == "" || pw == "") // 입력 정보가 하나라도 비어있으면
-            return null // Null 반환
-        if (name == null) {
-            name = "a"
-        }
-        return User(email,pw,name)
+    private fun signIn(email: String, password: String) {
+        // [START sign_in_with_email]
+        auth.signInWithEmailAndPassword(email, password)
+            .addOnCompleteListener(this) { task ->
+                if (task.isSuccessful) {
+                    // Sign in success, update UI with the signed-in user's information
+                    Log.d(TAG, "signInWithEmail:success")
+                    val user = auth.currentUser
+                    val intent = Intent(this, HomeActivity::class.java)
+                    val uid = auth?.currentUser?.uid
+                    updateUI(user)
+                    intent.putExtra("email", email)
+                    intent.putExtra("password", password)
+                    intent.putExtra("uid", uid)
+                    setResult(Activity.RESULT_OK, intent)
+                    startActivity(intent)
+                } else {
+                    // If sign in fails, display a message to the user.
+                    Log.w(TAG, "signInWithEmail:failure", task.exception)
+                    Toast.makeText(
+                        baseContext,
+                        "Authentication failed.",
+                        Toast.LENGTH_SHORT,
+                    ).show()
+                    updateUI(null)
+                }
+            }
+        // [END sign_in_with_email]
+    }
+
+    private fun updateUI(user: FirebaseUser?) {
     }
 }

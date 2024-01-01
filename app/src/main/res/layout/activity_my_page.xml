@@ -70,6 +70,7 @@
                         android:src="@drawable/instagram_logo">
                     </ImageView>
                     <TextView
+                        android:id="@+id/tv_name"
                         android:layout_width="100dp"
                         android:layout_height="20dp"
                         android:gravity="center"

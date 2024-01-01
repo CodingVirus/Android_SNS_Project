@@ -8,6 +8,7 @@ import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
+import android.widget.TextView
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
@@ -30,6 +31,7 @@ class SignUpActivity : AppCompatActivity() {
         val inputName = findViewById<EditText>(R.id.et_inputName)
         val regiButton = findViewById<Button>(R.id.btn_register)
         val backButton = findViewById<ImageView>(R.id.btn_back)
+        val alreadyAccount = findViewById<TextView>(R.id.tv_alreadyAccount)
 
         auth = Firebase.auth
         firestore = FirebaseFirestore.getInstance()
@@ -65,6 +67,10 @@ class SignUpActivity : AppCompatActivity() {
         }
 
         backButton.setOnClickListener {
+            finish()
+        }
+
+        alreadyAccount.setOnClickListener {
             finish()
         }
     }

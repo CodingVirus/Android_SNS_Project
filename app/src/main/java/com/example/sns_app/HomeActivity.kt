@@ -68,7 +68,7 @@ class HomeActivity : AppCompatActivity() {
                             }
 
                             if (nameFromFirestore.isEmpty()) {
-                                nameFromFirestore = "No nickname found"
+                                nameFromFirestore = "No name found"
                             }
 
                             if (uidFromFirestore.isEmpty()) {

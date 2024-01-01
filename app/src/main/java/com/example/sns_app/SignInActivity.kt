@@ -37,7 +37,7 @@ class SignInActivity : AppCompatActivity() {
         val inputName = findViewById<TextView>(R.id.tv_inputName)
         val loginButton = findViewById<Button>(R.id.btn_login)
         val regiButton = findViewById<TextView>(R.id.tv_createAccount)
-        val findEmail = findViewById<TextView>(R.id.tv_forgotPassword)
+        val forgotPw = findViewById<TextView>(R.id.tv_forgotPassword)
 
         loginButton.setOnClickListener {
 
@@ -67,6 +67,11 @@ class SignInActivity : AppCompatActivity() {
         regiButton.setOnClickListener {
             val intent = Intent(this, SignUpActivity::class.java)
             resultLauncher.launch(intent)
+        }
+
+        forgotPw.setOnClickListener {
+            val intent = Intent(this, FindActivity::class.java)
+            startActivity(intent)
         }
 
         resultLauncher =

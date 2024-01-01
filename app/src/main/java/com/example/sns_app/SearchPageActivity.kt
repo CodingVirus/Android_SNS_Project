@@ -2,14 +2,11 @@ package com.example.sns_app
 
 import android.annotation.SuppressLint
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
-import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.ImageView
-import android.widget.LinearLayout
 import android.widget.SearchView
+import androidx.appcompat.app.AppCompatActivity
 
 class SearchPageActivity : AppCompatActivity() {
 
@@ -17,7 +14,7 @@ class SearchPageActivity : AppCompatActivity() {
     private val homeButton: ImageButton by lazy { findViewById(R.id.iv_home) }
     private val myPageButton: ImageButton by lazy { findViewById(R.id.iv_my_page) }
     private val addButton: ImageButton by lazy { findViewById(R.id.iv_add) }
-    private val postLayout: LinearLayout by lazy { findViewById(R.id.main_post) }
+//    private val postLayout: LinearLayout by lazy { findViewById(R.id.main_post) }
 
 
     @SuppressLint("MissingInflatedId")

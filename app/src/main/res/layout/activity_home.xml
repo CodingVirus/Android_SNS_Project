@@ -12,7 +12,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="email"
-        android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@+id/tv_name"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -21,19 +20,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="name"
-        android:visibility="invisible"
 
-        app:layout_constraintBottom_toTopOf="@+id/tv_password"
+
+        app:layout_constraintBottom_toTopOf="@+id/tv_uid"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/tv_password"
+        android:id="@+id/tv_uid"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="100dp"
+        android:text="uid"
 
-        android:text="password"
-        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 

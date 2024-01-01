@@ -14,9 +14,19 @@ import android.widget.Button
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.LinearLayout
+import android.widget.Toast
 import androidx.core.view.marginBottom
 import androidx.core.view.setMargins
 import androidx.lifecycle.ViewModelProvider.NewInstanceFactory.Companion.instance
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.example.sns_app.databinding.ActivityHomeBinding
+import com.example.sns_app.databinding.LayoutRecyclerItemBinding
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 
 class HomeActivity : AppCompatActivity() {
     init {
@@ -37,12 +47,20 @@ class HomeActivity : AppCompatActivity() {
     private val homeButton: ImageView by lazy {findViewById(R.id.btn_home)}
     private val myPageButton: ImageView by lazy {findViewById(R.id.btn_my_page)}
     private val addButton: ImageView by lazy {findViewById(R.id.btn_add)}
-    private val postLayout: LinearLayout by lazy { findViewById(R.id.main_post) }
+    //private val postLayout: LinearLayout by lazy { findViewById(R.id.main_post) }
 
+    private lateinit var recyclerView: RecyclerView
+    private lateinit var dataList: ArrayList<UserTest>
+
+    private lateinit var database: DatabaseReference
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
+
+        recyclerView = findViewById(R.id.recycler_post_view)
+        recyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
+        recyclerView.setHasFixedSize(true)
 
 
 
@@ -81,26 +99,60 @@ class HomeActivity : AppCompatActivity() {
 
 //        tv_loginResult.text = "안녕하세요 ${name}님"
     }
-    fun createPost(img: Uri?, com: String)  {
-        val imagePost = ImageView(this)
-        val comment = TextView(this)
 
-        val lp = LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
-        val lp2 = LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
-        lp2.setMargins(0, 0, 0, 80)
+    fun updatePost() {
 
-        imagePost.layoutParams = lp
-        imagePost.setImageURI(img)
+        dataList = arrayListOf<UserTest>()
 
+        database = FirebaseDatabase.getInstance().getReference("Users")
+        database.addValueEventListener(object : ValueEventListener {
 
-        comment.layoutParams = lp2
-        comment.textSize = 40f
-        comment.text = com
+            override fun onDataChange(snapshot: DataSnapshot) {
+                for (i in snapshot.children) {
+                    val imageUri = i.child("1").child("imageUri").value
+                    val userName = i.child("1").child("userName").value
+                    val comment = i.child("1").child("comment").value
 
+                    val dataClass = UserTest()
+                    dataClass.userName = userName.toString()
+                    dataClass.imageUri = imageUri.toString()
+                    dataClass.comment = comment.toString()
+                    dataList.add(dataClass)
 
+                }
 
-        postLayout.addView(comment, 0)
-        postLayout.addView(imagePost, 0)
+                recyclerView.adapter = MyRecyclerAdapter(dataList)
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+
+            }
+
+        })
+
+//        database.child("Minyong").child("1").get().addOnSuccessListener {
+//
+//            if (it.exists()) {
+//
+//                val imageUri = it.child("imageUri").value
+//                val userName = it.child("userName").value
+//                val comment = it.child("comment").value
+//
+//                val dataClass = UserTest()
+//                dataClass.userName = userName.toString()
+//                dataClass.imageUri = imageUri.toString()
+//                dataClass.comment = comment.toString()
+//                dataList.add(dataClass)
+//
+//                recyclerView.adapter = MyRecyclerAdapter(dataList)
+//
+//            } else {
+//                Toast.makeText(this, "User Doesn't Exist", Toast.LENGTH_SHORT).show()
+//            }
+//        }.addOnFailureListener {
+//            Toast.makeText(this, "Failed", Toast.LENGTH_SHORT).show()
+//        }
+
     }
 
     private fun createUser(): User?{

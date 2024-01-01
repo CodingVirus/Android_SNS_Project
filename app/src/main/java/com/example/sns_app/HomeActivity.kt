@@ -39,6 +39,7 @@ class HomeActivity : AppCompatActivity() {
     private val homeButton: ImageView by lazy {findViewById(R.id.btn_home)}
     private val myPageButton: ImageView by lazy {findViewById(R.id.btn_my_page)}
     private val addButton: ImageView by lazy {findViewById(R.id.btn_add)}
+    private val searchButton: ImageView by lazy {findViewById(R.id.btn_search)}
 //    private val postLayout: LinearLayout by lazy { findViewById(R.id.main_post) }
     private lateinit var firestore: FirebaseFirestore
     private var uid: String? = null
@@ -119,6 +120,10 @@ class HomeActivity : AppCompatActivity() {
 
         }
 
+        searchButton.setOnClickListener {
+            val intent = Intent(this, SearchPageActivity::class.java)
+            startActivity(intent)
+        }
 //        tv_loginResult.text = "안녕하세요 ${name}님"
     }
 

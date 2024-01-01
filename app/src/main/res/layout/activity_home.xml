@@ -81,7 +81,7 @@
                 style="@style/BottomIconStyle"/>
 
             <ImageView
-                android:id="@+id/btn_community"
+                android:id="@+id/btn_search"
                 android:src="@drawable/home_button"
                 style="@style/BottomIconStyle"/>
 

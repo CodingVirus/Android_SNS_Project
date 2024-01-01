@@ -214,3 +214,5 @@
     </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+    tools:context=".MyPageActivity"/>
+

@@ -54,7 +54,6 @@
         android:hint="@string/email"
         android:paddingStart="15sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.516"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_inputName" />
 
@@ -69,9 +68,22 @@
         android:inputType="textPassword"
         android:paddingStart="15sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.483"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_inputEmail" />
+
+    <EditText
+        android:id="@+id/et_inputPwValid"
+        android:layout_width="380dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/tv_edge"
+        android:gravity="center|start"
+        android:hint="@string/password_validate"
+        android:inputType="textPassword"
+        android:paddingStart="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_inputPw" />
 
     <Button
         android:id="@+id/btn_register"
@@ -82,9 +94,8 @@
         android:text="@string/register"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.483"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_inputPw" />
+        app:layout_constraintTop_toBottomOf="@+id/et_inputPwValid" />
 
     <TextView
         android:id="@+id/tv_alreadyAccount"

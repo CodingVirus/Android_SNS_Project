@@ -45,17 +45,16 @@
             android:orientation="horizontal">
 
 
-<!--            <de.hdodenhof.circleimageview.CircleImageView-->
-<!--                android:id="@+id/circle_iv"-->
-<!--                android:layout_width="60dp"-->
-<!--                android:layout_height="60dp"-->
-<!--                android:layout_gravity="center"-->
-<!--                android:background="@android:color/transparent"-->
-<!--                app:civ_border_overlay="true"-->
-<!--                app:civ_border_width="5dp"-->
-<!--                app:civ_border_color="#000000"-->
-<!--                android:src="@drawable/test_img"-->
-<!--                />-->
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/circle_iv"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:background="@android:color/transparent"
+                app:civ_border_overlay="true"
+                app:civ_border_width="5dp"
+                app:civ_border_color="#000000"
+                />
 
 
 
@@ -117,13 +116,6 @@
                 android:layout_marginTop="5dp"
                 android:src="@drawable/post_icon_one" />
 
-            <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_marginLeft="245dp"
-                android:layout_marginTop="5dp"
-                android:src="@drawable/post_icon_four" />
-
         </LinearLayout>
 
 
@@ -181,7 +173,8 @@
 
             <ImageView
                 android:id="@+id/iv_my_page"
-                style="@style/BottomIconStyle" />
+                style="@style/BottomIconStyle"
+                android:background="#454141"/>
         </LinearLayout>
 
 

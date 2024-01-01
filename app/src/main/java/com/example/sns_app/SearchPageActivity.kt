@@ -32,7 +32,7 @@ class SearchPageActivity : AppCompatActivity() {
 
         val iv_one = findViewById<ImageView>(R.id.page_one)
         iv_one.setOnClickListener {
-            val intent = Intent(this, SignUpActivity::class.java)
+            val intent = Intent(this, ActivityPost::class.java)
             startActivity(intent)
         }
     }

@@ -20,6 +20,11 @@
     <string name="register_success">Register Success</string>
     <string name="Input_post">Input Post...</string>
     <string name="New_Post">New Post</string>
+    <string name="My_profile">My Profile</string>
+    <string name="My_post_num">Post</string>
+    <string name="My_followers">Followers</string>
+    <string name="My_following">Following</string>
+    <string name="Edit_profile">Edit Profile</string>
     <string name="Processing">Processing...</string>
     <string name="Upload_success">Uploaded Successfully</string>
     <string name="Upload_fail">Upload Failed...</string>

@@ -21,6 +21,11 @@
     <string name="register_success">회원가입 성공</string>
     <string name="Input_post">" 문구 입력... "</string>
     <string name="New_Post">새 게시물</string>
+    <string name="My_profile">내 프로필</string>
+    <string name="My_post_num">게시물</string>
+    <string name="My_followers">팔로워</string>
+    <string name="My_following">팔로잉</string>
+    <string name="Edit_profile">프로필 편집</string>
     <string name="Uploading_post">게시물 업로드중...</string>
     <string name="Processing">" 진행중... "</string>
     <string name="Upload_success">업로드 성공</string>

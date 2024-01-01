@@ -2,45 +2,27 @@ package com.example.sns_app
 
 import android.content.ContentValues.TAG
 import android.content.Intent
-import android.media.Image
-import android.net.Uri
-import android.view.View
-import android.view.ViewGroup
-import android.widget.Button
 import android.os.Bundle
 import android.util.Log
-import android.widget.ImageButton
+import android.widget.ImageView
 import android.widget.LinearLayout
-import android.widget.Toast
-import androidx.core.view.marginBottom
-import androidx.core.view.setMargins
-import androidx.lifecycle.ViewModelProvider.NewInstanceFactory.Companion.instance
+import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.sns_app.databinding.ActivityHomeBinding
-import com.example.sns_app.databinding.LayoutRecyclerItemBinding
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
-import android.widget.TextView
-import androidx.appcompat.app.AppCompatActivity
-import com.google.android.gms.tasks.OnCompleteListener
-import com.google.android.gms.tasks.Task
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.ktx.auth
-import com.google.firebase.firestore.DocumentSnapshot
 import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.firestore.QuerySnapshot
 import com.google.firebase.ktx.Firebase
-import org.checkerframework.checker.nullness.qual.NonNull
-
 
 class HomeActivity : AppCompatActivity() {
   
-    lateinit var db: DBHelper
-    var users = ArrayList<User>()
+
     
     init {
         instance = this
@@ -57,7 +39,7 @@ class HomeActivity : AppCompatActivity() {
     private val homeButton: ImageView by lazy {findViewById(R.id.btn_home)}
     private val myPageButton: ImageView by lazy {findViewById(R.id.btn_my_page)}
     private val addButton: ImageView by lazy {findViewById(R.id.btn_add)}
-    private val postLayout: LinearLayout by lazy { findViewById(R.id.main_post) }
+//    private val postLayout: LinearLayout by lazy { findViewById(R.id.main_post) }
     private lateinit var firestore: FirebaseFirestore
     private var uid: String? = null
     private lateinit var auth: FirebaseAuth
@@ -73,10 +55,6 @@ class HomeActivity : AppCompatActivity() {
         recyclerView = findViewById(R.id.recycler_post_view)
         recyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         recyclerView.setHasFixedSize(true)
-
-
-
-        db = DBHelper(this)
 
         uid = FirebaseAuth.getInstance().currentUser?.uid
         firestore = FirebaseFirestore.getInstance()
@@ -199,25 +177,4 @@ class HomeActivity : AppCompatActivity() {
 //        }
 
     }
-
-    private fun createUser(): User?{
-        val inputEmail = findViewById<EditText>(R.id.et_inputEmail)
-        val inputPw = findViewById<EditText>(R.id.et_inputPw)
-        val inputName = findViewById<TextView>(R.id.tv_inputName)
-        val email = inputEmail.text.toString()
-        val pw = inputPw.text.toString()
-        var name = inputName.text.toString()
-        if(email == "" || pw == "") // 입력 정보가 하나라도 비어있으면
-            return null // Null 반환
-        if (name == null) {
-            name = "a"
-        }
-        return User(email,pw,name)
-
-
-
-
-    }
-
-
 }

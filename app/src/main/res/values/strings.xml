@@ -30,12 +30,13 @@
     <string name="Upload_fail">Upload Failed...</string>
     <string name="Uploading_post">Uploading Post...</string>
     <string name="password_validate">password validate</string>
-    <string name="find_password">Find Password</string>
+    <string name="find_password">Reset Password</string>
     <string name="enter_email">Please enter your registered email</string>
     <string name="input_email">Enter email</string>
-    <string name="email_submit">Email Submit</string>
+    <string name="submit">Submit</string>
     <string name="processing">Processing. Wait a moment</string>
     <string name="send_email">Send a email to your mailbox</string>
     <string name="fail_send_email">Fail to send email!</string>
+    <string name="profile_edit">Profile Edit</string>
 
 </resources>

@@ -69,7 +69,6 @@ class AddPostActivity : AppCompatActivity() {
             }
         }
     }
-
     private fun contentUpload() {
         if (photoUri != null) {
             val progressDialog = ProgressDialog(this)

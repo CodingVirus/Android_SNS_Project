@@ -176,9 +176,10 @@
                 android:scaleType="fitXY"
                 android:src="@drawable/icon_4th" />
 
-            <ImageView
+            <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/iv_my_page"
-                style="@style/BottomIconStyle" />
+                style="@style/BottomIconStyle"
+                android:src="@drawable/profile_image"/>
         </LinearLayout>
     </LinearLayout>
 
